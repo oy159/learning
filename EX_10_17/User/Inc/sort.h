@@ -8,6 +8,7 @@
 #include "node.h"
 
 void InsertSort(Node *p);
-
+void BubbleSort(Node *p);
+int LenNode(Node *p);
 
 #endif //LEARNING_SORT_H

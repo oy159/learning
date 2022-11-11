@@ -62,3 +62,47 @@ void InsertSort(Node *p) {
         }
     }
 }
+
+int LenNode(Node *p){
+    int len =0;
+    while (p!=NULL){
+        len++;
+        p=p->next;
+    }
+    return len;
+};
+
+Node *BubbleMax(Node *p,int j){
+    Node *m = (Node *) malloc(sizeof(Node));
+    Node *q;
+    m->next = p;
+    for (int i = 0; i < j; ++i) {
+        p=p->next;
+    }
+    if (p->data>p->next->data){
+        if (j==0){
+            m->next=p->next;
+            p->next=p->next->next;
+            m->next->next=p;
+            return m->next;
+        }else{
+            q=GetOutNode(m->next,j+1);
+            m->next=InsertNode(m->next,q,j+2);
+            return m->next;
+        }
+    }else{
+        return m->next;
+    }
+}
+
+
+void BubbleSort(Node *p){
+    int len=LenNode(p);
+    for (int i = 0; i < len; ++i) {
+        for (int j = 0; j < len-i-1; ++j) {
+            p=BubbleMax(p,j);
+            DisplayAllNode(p);
+            printf("\n");
+        }
+    }
+}
