@@ -172,3 +172,17 @@ void InsertSortSeq(seqList *p){
         }
     }
 }
+
+void BubbleSortSeq(seqList *p){
+    for (int i = 0; i < p->length; ++i) {
+        for (int j = 0; j < p->length-i-1; ++j) {
+            if (p->data[j]>p->data[j+1]){
+                SwipSeqlist(p,j,j+1);
+            }
+            DisplayAllSeq(*p);
+            printf("\n");
+        }
+    }
+}
+
+

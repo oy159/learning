@@ -12,6 +12,8 @@ void InsertSortNode(Node *p);
 void BubbleSortNode(Node *p);
 void SimpleSelectSortNode(Node *p);
 
+void BubbleSortSeq(seqList *p);
+
 
 void InsertSortSeq(seqList *p);
 

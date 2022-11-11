@@ -234,8 +234,15 @@ int main() {
 //    SimpleSelectSortNode(p);
 
     /*插入排序*/
+//    seqList p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    InsertSortSeq(&p);
+
+    /*起泡排序*/
     seqList p;
     int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
     initSeqlist(&p,x,10);
-    InsertSortSeq(&p);
+    BubbleSortSeq(&p);
+
 }
