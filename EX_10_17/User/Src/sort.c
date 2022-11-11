@@ -43,7 +43,7 @@ int FindMax(Node *p, int x, int len) {
     return i + 1;
 }
 
-void InsertSort(Node *p) {
+void InsertSortNode(Node *p) {
     Node *q;
     Node *temp;
     int x, len = 1;
@@ -96,12 +96,78 @@ Node *BubbleMax(Node *p,int j){
 }
 
 
-void BubbleSort(Node *p){
+void BubbleSortNode(Node *p){
     int len=LenNode(p);
     for (int i = 0; i < len; ++i) {
         for (int j = 0; j < len-i-1; ++j) {
             p=BubbleMax(p,j);
             DisplayAllNode(p);
+            printf("\n");
+        }
+    }
+}
+
+Node *SimpleSelect(Node *p,int i){
+    Node *m = (Node *) malloc(sizeof(Node));
+    int len=LenNode(p);
+    Node *q;
+    Node *temp;
+    m->next = p;
+    q=p;
+    for (int j = 0; j < i; ++j) {
+        q=q->next;
+    }
+    for (int j = 0; j < i+1; ++j) {
+        p=p->next;
+    }
+    for (int j = i; j < len-1; ++j) {
+        if(p->data<q->data){
+            temp=GetOutNode(m->next,j+2);
+            m->next=InsertNode(m->next,temp,i+1);
+            temp=GetOutNode(m->next,i+2);
+            m->next=InsertNode(m->next,temp,j+2);
+            q=m->next;
+            for (int k = 0; k < i; ++k) {
+                q=q->next;
+            }
+            p=m->next;
+            for (int h = 0; h < j+2; ++h) {
+                p=p->next;
+            }
+            DisplayAllNode(m->next);
+            printf("\n");
+        }else
+            p=p->next;
+    }
+    return m->next;
+}
+
+
+void SimpleSelectSortNode(Node *p){
+    int len=LenNode(p);
+    for (int i = 0; i < len; ++i) {
+        p=SimpleSelect(p,i);
+    }
+}
+
+Node *TraverNode(Node *p,int x){
+    for (int i = 0; i < x; ++i) {
+        p=p->next;
+    }
+    return p;
+}
+
+void InsertSortSeq(seqList *p){
+    int len=1;
+    int temp;
+    for (int i = len; i < p->length; ++i) {
+        for (int j = 0; j < i; ++j) {
+            if(p->data[i]<p->data[j]){
+                temp=p->data[i];
+                DeleteSeq(p,i);
+                insertSeqlist(p,temp,j);
+            }
+            DisplayAllSeq(*p);
             printf("\n");
         }
     }

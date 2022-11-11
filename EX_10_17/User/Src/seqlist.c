@@ -10,13 +10,25 @@ void initSeqlist(seqList *list, const int *x, int len) {
 
 
 void insertSeqlist(seqList *list, int x, int i) {
-    int temp = list->data[i];
-    list->data[i] = x;
-    for (int j = list->length - 1; j > i; ++j) {
+    for (int j = list->length - 1; j > i-1; --j) {
         list->data[j + 1] = list->data[j];
     }
-    list->data[i + 1] = temp;
+    list->data[i] = x;
     list->length++;
+}
+
+void SwipSeqlist(seqList *list, int i, int j){
+    int temp;
+    temp=list->data[i];
+    list->data[i]=list->data[j];
+    list->data[j]=temp;
+}
+
+void DeleteSeq(seqList *list, int i){
+    for (int j = i; j < list->length-1; ++j) {
+        list->data[j]=list->data[j+1];
+    }
+    list->length--;
 }
 
 

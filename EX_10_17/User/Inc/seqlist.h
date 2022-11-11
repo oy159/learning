@@ -41,6 +41,12 @@ void initSeqlist(seqList *list, const int *x, int len);
 void insertSeqlist(seqList *list, int x, int i);
 
 
+
+void SwipSeqlist(seqList *list, int i, int j);
+
+void DeleteSeq(seqList *list, int i);
+
+
 /// display list
 /// \param list 表
 void DisplayAllSeq(seqList list);

@@ -215,14 +215,27 @@ int main() {
 //    Node *p;
 //    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
 //    p = CreateNode(x, 10);
-//    InsertSort(p);
+//    InsertSortNode(p);
 
     /*起泡排序*/
-    Node *p;
-    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
-    p = CreateNode(x, 10);
-    DisplayAllNode(p);
-    printf("\n");
-    BubbleSort(p);
+//    Node *p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    p = CreateNode(x, 10);
+//    DisplayAllNode(p);
+//    printf("\n");
+//    BubbleSortNode(p);
 
+    /*简单选择排序*/
+//    Node *p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    p = CreateNode(x, 10);
+//    DisplayAllNode(p);
+//    printf("\n");
+//    SimpleSelectSortNode(p);
+
+    /*插入排序*/
+    seqList p;
+    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+    initSeqlist(&p,x,10);
+    InsertSortSeq(&p);
 }

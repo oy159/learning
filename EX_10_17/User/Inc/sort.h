@@ -6,9 +6,13 @@
 #define LEARNING_SORT_H
 
 #include "node.h"
+#include "seqlist.h"
 
-void InsertSort(Node *p);
-void BubbleSort(Node *p);
-int LenNode(Node *p);
+void InsertSortNode(Node *p);
+void BubbleSortNode(Node *p);
+void SimpleSelectSortNode(Node *p);
+
+
+void InsertSortSeq(seqList *p);
 
 #endif //LEARNING_SORT_H
