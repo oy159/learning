@@ -185,4 +185,71 @@ void BubbleSortSeq(seqList *p){
     }
 }
 
+void SimpleSelectSortSeq(seqList *p){
+    for (int i = 0; i < p->length; ++i) {
+        for (int j = i+1; j < p->length; ++j) {
+            if (p->data[j]<p->data[i]){
+                SwipSeqlist(p,i,j);
+            }
+        }
+        DisplayAllSeq(*p);
+        printf("\n");
+    }
+}
 
+
+void Quick_Sort(seqList *p, int begin, int end){
+    if(begin > end)
+        return;
+    int tmp = p->data[begin];
+    int i = begin;
+    int j = end;
+    while(i != j){
+        while(p->data[j] >= tmp && j > i)
+            j--;
+        while(p->data[i] <= tmp && j > i)
+            i++;
+        if(j > i){
+            int t = p->data[i];
+            p->data[i] = p->data[j];
+            p->data[j] = t;
+        }
+    }
+    DisplayAllSeq(*p);
+    printf("\n");
+    p->data[begin] = p->data[i];
+    p->data[i] = tmp;
+    Quick_Sort(p, begin, i-1);
+    Quick_Sort(p, i+1, end);
+}
+
+int SeekSortTraver(seqList p,int x){
+    for (int i = 0; i < p.length; ++i) {
+        if(p.data[i]==x){
+            return i;
+        }
+        if (p.data[i]>x){
+            return -1;
+        }
+    }
+    return -1;
+}
+
+
+int SeekSortDivide(seqList p,int x){
+    int begin,end;
+    begin=0;end=p.length-1;
+    int mid;
+    while (begin<=end){
+        mid=(begin+end)/2;
+        if(p.data[mid]==x){
+            return mid;
+        }
+        else if(p.data[mid]>x){
+            end=mid-1;
+        }else{
+            begin=mid+1;
+        }
+    }
+    return -1;
+}

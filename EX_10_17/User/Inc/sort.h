@@ -12,9 +12,14 @@ void InsertSortNode(Node *p);
 void BubbleSortNode(Node *p);
 void SimpleSelectSortNode(Node *p);
 
-void BubbleSortSeq(seqList *p);
-
 
 void InsertSortSeq(seqList *p);
+void BubbleSortSeq(seqList *p);
+void SimpleSelectSortSeq(seqList *p);
+//void QuickSortSeq(seqList *p);
+void Quick_Sort(seqList *p, int begin, int end);
+int SeekSortTraver(seqList p,int x);
+int SeekSortDivide(seqList p,int x);
+
 
 #endif //LEARNING_SORT_H

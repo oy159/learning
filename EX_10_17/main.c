@@ -240,9 +240,114 @@ int main() {
 //    InsertSortSeq(&p);
 
     /*起泡排序*/
+//    seqList p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    BubbleSortSeq(&p);
+
+    /*简单选择排序*/
+//    seqList p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    SimpleSelectSortSeq(&p);
+
+    /*快速排序*/
+//    seqList p;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    Quick_Sort(&p,0,p.length-1);
+
+    /*顺序查找法*/
+//    seqList p;
+//    int d,i;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    Quick_Sort(&p,0,p.length-1);
+//    fflush(stdout);
+//    scanf("%d",&d);
+//    i=SeekSortTraver(p,d);
+//    if (i==-1){
+//        printf("no");
+//    }else{
+//        printf("在第%d个",i+1);
+//    }
+
+    /*二分查找法*/
+//    seqList p;
+//    int d,i;
+//    int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
+//    initSeqlist(&p,x,10);
+//    Quick_Sort(&p,0,p.length-1);
+//    fflush(stdout);
+//    scanf("%d",&d);
+//    i=SeekSortDivide(p,d);
+//    if (i==-1){
+//        printf("no");
+//    }else{
+//        printf("在第%d个",i+1);
+//    }
+
+    /*排序查找合并*/
     seqList p;
+    int n,d,i;
     int x[10] = {51, 38, 79, 22, 91, 105, 33, 52, 16, 112};
     initSeqlist(&p,x,10);
-    BubbleSortSeq(&p);
-
+    printf("以下为初始顺序表");
+    DisplayAllSeq(p);
+    printf("\n");
+    printf("************************功能选择************************\n");
+    printf("1.简单插入排序\n");
+    printf("2.起泡排序\n");
+    printf("3.简单选择排序\n");
+    printf("4.快速排序\n");
+    printf("5.顺序查找\n");
+    printf("6.二分查找\n");
+    printf("*******************************************************\n");
+    while (1) {
+        printf("请输入选择的功能序号：");
+        fflush(stdout);
+        scanf("%d", &n);
+        switch (n) {
+            case 1:
+                initSeqlist(&p, x, 10);
+                InsertSortSeq(&p);
+                break;
+            case 2:
+                initSeqlist(&p, x, 10);
+                BubbleSortSeq(&p);
+                break;
+            case 3:
+                initSeqlist(&p, x, 10);
+                SimpleSelectSortSeq(&p);
+                break;
+            case 4:
+                initSeqlist(&p, x, 10);
+                Quick_Sort(&p, 0, p.length - 1);
+                break;
+            case 5:
+                printf("请输入要查找的数字：");
+                fflush(stdout);
+                scanf("%d", &d);
+                i = SeekSortTraver(p, d);
+                if (i == -1) {
+                    printf("不存在\n");
+                } else {
+                    printf("在第%d个\n", i + 1);
+                }
+                break;
+            case 6:
+                printf("请输入要查找的数字：");
+                fflush(stdout);
+                scanf("%d", &d);
+                i = SeekSortDivide(p, d);
+                if (i == -1) {
+                    printf("不存在\n");
+                } else {
+                    printf("在第%d个\n", i + 1);
+                }
+                break;
+            default:
+                printf("输入错误\n");
+        }
+    }
 }
