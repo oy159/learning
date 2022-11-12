@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "User/Inc/node.h"
-#include "User/Inc/seqlist.h"
-#include "User/Inc/tree.h"
+#include "node.h"
+#include "seqlist.h"
+#include "tree.h"
 #include "sort.h"
 
 void OddEven(int A[], int len) {
