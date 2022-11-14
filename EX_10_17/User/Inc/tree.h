@@ -40,5 +40,6 @@ int PointSum(Tree *t,int i);
 int DepthSum(Tree *t,int i,int *max);
 int SinglePointSum(Tree *t,int *x);
 void DrawTree(Tree *t);
+void CopyTree(Tree *t,Tree **m);
 
 #endif //LEARNING_TREE_H

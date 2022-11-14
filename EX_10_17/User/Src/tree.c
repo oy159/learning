@@ -187,3 +187,15 @@ int SinglePointSum(Tree *t,int *x){
 //    EnLinkTQueue(q,t);
 //
 //}
+
+
+void CopyTree(Tree *t,Tree **m){
+    if(t==NULL){
+        *m=NULL;
+        return ;
+    }
+    *m = (Tree *) malloc(sizeof(Tree));
+    (*m)->data=t->data;
+    CopyTree(t->left,&(*m)->left);
+    CopyTree(t->right ,&(*m)->right);
+}
